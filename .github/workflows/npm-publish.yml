@@ -14,5 +14,5 @@ jobs:
       - run: npm run build
       - run: npm test
       - run: npm publish --access public
-          env:
-            NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
