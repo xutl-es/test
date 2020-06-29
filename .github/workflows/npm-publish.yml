@@ -10,9 +10,13 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - run: npm config set username xutl-dev
+      - run: npm config set email dev@xutl.es
+      - run: npm config set always-auth true
       - run: npm install
       - run: npm run build
       - run: npm test
+      - run: npm config list 
       - run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
