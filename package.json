@@ -1,10 +1,12 @@
 {
 	"name": "@xutl/test",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Miniscule BDD Testing Framework",
 	"main": "src/index.js",
 	"scripts": {
-		"test": "node src/runner.js 'test/*.js'"
+		"test": "./src/runner.js 'test/*.js'",
+		"build": "tsc && chmod 0755 src/runner.js",
+		"prepublishOnly": "npm run build"
 	},
 	"bin": {
 		"xutltest": "src/runner.js"
@@ -28,6 +30,7 @@
 		"glob": "^7.1.6"
 	},
 	"devDependencies": {
+		"@types/node": "^14.0.14",
 		"@types/glob": "^7.1.1",
 		"typescript": "^3.9.5"
 	}

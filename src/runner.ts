@@ -1,4 +1,4 @@
-#!/usr/bin/env node --no-warnings
+#!/usr/bin/env node
 
 import glob from 'glob';
 import { spawn } from 'child_process';
