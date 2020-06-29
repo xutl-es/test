@@ -13,12 +13,10 @@ jobs:
       - run: npm config set username xutl-dev
       - run: npm config set email dev@xutl.es
       - run: npm config set always-auth true
+      - run: npm config set _authToken ${{secrets.NPM_TOKEN}}
+      - run: npm config set @xutl:_authToken ${{secrets.NPM_TOKEN}}
+      - run: npm config set //registry.npmjs.org/:_authToken ${{secrets.NPM_TOKEN}}
       - run: npm install
       - run: npm run build
       - run: npm test
-      - run: echo "$NODE_AUTH_TOKEN"
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
