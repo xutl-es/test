@@ -1,5 +1,3 @@
-*.ts
-!*.d.ts
-test/*.d.ts
-tsconfig.json
 .github/
+test/
+.prettierrc

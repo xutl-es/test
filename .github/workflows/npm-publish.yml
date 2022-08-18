@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: '18.x'
       - run: npm config set username xutl-dev
       - run: npm config set email dev@xutl.es
       - run: npm config set always-auth true
@@ -17,6 +17,5 @@ jobs:
       - run: npm config set @xutl:_authToken ${{secrets.NPM_TOKEN}}
       - run: npm config set //registry.npmjs.org/:_authToken ${{secrets.NPM_TOKEN}}
       - run: npm install
-      - run: npm run build
       - run: npm test
       - run: npm publish --access public

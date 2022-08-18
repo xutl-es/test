@@ -1,15 +1,14 @@
 {
 	"name": "@xutl/test",
-	"version": "1.0.3",
+	"version": "1.1.0",
 	"description": "Miniscule BDD Testing Framework",
-	"main": "src/index.js",
+	"main": "lib/index.js",
 	"scripts": {
-		"test": "./src/runner.js 'test/*.js'",
-		"build": "tsc && chmod 0755 src/runner.js",
-		"prepublishOnly": "npm run build"
+		"format": "prettier --write lib/**/*.{js,d.ts}",
+		"test": "[ -d test ] && node lib/run.js 'test/*.{mjs,cjs}'"
 	},
 	"bin": {
-		"xutltest": "src/runner.js"
+		"xutltest": "lib/run.js"
 	},
 	"keywords": [
 		"BDD",
@@ -26,12 +25,9 @@
 	},
 	"homepage": "https://xutl.es",
 	"dependencies": {
-		"@xutl/defer": "~0.0.0 || ^1.0.0",
 		"glob": "^7.1.6"
 	},
 	"devDependencies": {
-		"@types/glob": "^7.1.2",
-		"@types/node": "^14.0.14",
-		"typescript": "^3.9.5"
+		"prettier": "^2.7.1"
 	}
 }
