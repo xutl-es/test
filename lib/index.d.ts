@@ -34,3 +34,5 @@ export const describe: DescribeFn;
 export const it: ItFn;
 export const skip: SkipFn;
 export const todo: SkipFn;
+
+export const configure: (params: { timeout: number }) => void;
